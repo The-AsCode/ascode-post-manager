@@ -1,0 +1,19 @@
+{
+    "name": "ascode/ascode-post-manager",
+    "description": "A plugin for manage post",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "AsCode\\PostManager\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "adnan159",
+            "email": "osmanhaider159@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
