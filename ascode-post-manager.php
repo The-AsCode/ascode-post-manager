@@ -16,6 +16,8 @@
  * Domain Path:       /languages
  */
 
+use AsCode\PostManager\Admin;
+
  if( ! defined( 'ABSPATH' ) ) {
     exit;
  }
@@ -93,7 +95,7 @@
      * @return void
      */
     public function init_plugin() {
-        new AsCode\PostManager\Admin\Menu();
+        new AsCode\PostManager\Admin();
     }
 
  }
