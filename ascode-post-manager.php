@@ -16,9 +16,17 @@
  * Domain Path:       /languages
  */
 
+use AsCode\PostManager\Admin;
+
  if( ! defined( 'ABSPATH' ) ) {
     exit;
  }
+
+ if( ! file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+    die( 'Please run `composer install` on main plugin directory' );
+ }
+
+ require_once __DIR__ . '/vendor/autoload.php';
 
  /**
   * Plugin main class
@@ -34,6 +42,10 @@
 
     private function __construct(){
         $this->define_constants();
+
+        register_activation_hook( __FILE__, [ $this, 'activate' ] );
+
+        add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
     }
 
     /**
@@ -62,6 +74,28 @@
         define( 'ASC_POST_MANAGER_PATH', __DIR__ );
         define( 'ASC_POST_MANAGER_URL', plugins_url( '', ASC_POST_MANAGER_FILE ) );
         define( 'ASC_POST_MANAGER_ASSETS', ASC_POST_MANAGER_URL . '/assets' );
+    }
+
+    /**
+     * Do stuff upon plugin activation
+     *
+     * @return void
+     */
+    function activate() {
+        $installed = get_option( 'ascode_installed_time' );
+
+        if( ! $installed ) {
+            update_option( 'ascode_installed_time', time() );
+        }
+    }
+
+    /**
+     * Initial plugin function
+     *
+     * @return void
+     */
+    public function init_plugin() {
+        new AsCode\PostManager\Admin();
     }
 
  }
