@@ -22,6 +22,6 @@ class Menu {
     }
 
     public function plugin_page() {
-        echo 'hello';
+        echo ASC_POST_MANAGER_ASSETS .'/admin/js/dashboard.js';
     }
 }
