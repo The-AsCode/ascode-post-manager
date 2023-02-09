@@ -95,7 +95,11 @@ use AsCode\PostManager\Admin;
      * @return void
      */
     public function init_plugin() {
-        new AsCode\PostManager\Admin();
+        if( is_admin() ) {
+            new AsCode\PostManager\Admin();
+        } else {
+            // for frontend
+        }
     }
 
  }
