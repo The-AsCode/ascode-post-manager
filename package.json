@@ -1,0 +1,24 @@
+{
+  "name": "ascode-post-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.mix.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnan159/ascode-post-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnan159/ascode-post-manager/issues"
+  },
+  "homepage": "https://github.com/adnan159/ascode-post-manager#readme",
+  "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "laravel-mix": "^6.0.49"
+  }
+}

@@ -71,7 +71,7 @@ use AsCode\PostManager\Admin;
     function define_constants() {
         define( 'ASC_POST_MANAGER_VERSION', self::version );
         define( 'ASC_POST_MANAGER_FILE', __FILE__ );
-        define( 'ASC_POST_MANAGER_PATH', __DIR__ );
+        define( 'ASC_POST_MANAGER_DIR_PATH', __DIR__ );
         define( 'ASC_POST_MANAGER_URL', plugins_url( '', ASC_POST_MANAGER_FILE ) );
         define( 'ASC_POST_MANAGER_ASSETS', ASC_POST_MANAGER_URL . '/assets' );
     }
@@ -95,7 +95,11 @@ use AsCode\PostManager\Admin;
      * @return void
      */
     public function init_plugin() {
-        new AsCode\PostManager\Admin();
+        if( is_admin() ) {
+            new AsCode\PostManager\Admin();
+        } else {
+            // for frontend
+        }
     }
 
  }
