@@ -17,7 +17,7 @@ class Enqueue {
      */
     public function admin_script( $page ) {
         if( $page === 'toplevel_page_asc-post-manager' ) {
-            wp_enqueue_script( 'asc_post_manager_dashboard', ASC_POST_MANAGER_ASSETS .'/admin/js/dashboard.js' );
+            wp_enqueue_script( 'asc_post_manager_dashboard', ASC_POST_MANAGER_ASSETS .'/admin/js/dashboard.js', [], false, true );
         }
     }
 }
